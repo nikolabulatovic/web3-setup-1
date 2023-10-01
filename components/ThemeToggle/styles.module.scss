@@ -1,0 +1,19 @@
+.toggle-bg {
+  &::after {
+    content: '';
+    position: absolute;
+    // ${tw`absolute top-0.5 left-0.5 bg-white border border-gray-300 rounded-full h-5 w-5 transition shadow-sm`};
+  }
+}
+
+.theme-toggle {
+  &:checked {
+    & + .toggle-bg {
+      &::after {
+        transform: translateX(100%);
+        // ${tw`border-white`};
+      }
+      // ${tw`bg-blue-600 border-blue-600`};
+    }
+  }
+}

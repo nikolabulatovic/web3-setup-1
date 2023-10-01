@@ -1,0 +1,97 @@
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+@layer base {
+  :root {
+    --color-text-base-dark: #ffffff;
+    --color-text-muted-dark: #c7d2fe;
+    --color-text-inverted-dark: #4f46e5;
+    --color-fill-dark: #4338ca;
+    --color-button-accent-dark: #212121;
+    --color-button-accent-hover-dark: #585858;
+    --color-button-muted-dark: #6366f1;
+    --color-button-muted-dark-hover: 99 102 241;
+
+    --theme-change-transition-duration: 0.5s;
+    --hover-transition-duration: 0.3s;
+
+    &[data-theme='light'],
+    .theme-light {
+      --color-text-base: #1f1f1f;
+      --color-text-muted: #575757;
+      --color-text-inverted: #8783da;
+      --color-fill: #b6afff;
+      --color-button-accent: #ffffff;
+      --color-button-accent-hover: #eef2ff;
+      --color-button-muted: #9597ee;
+      --color-button-muted-hover: 149 151 238;
+    }
+
+    &[data-theme='dark'],
+    .theme-dark {
+      --color-text-base: var(--color-text-base-dark);
+      --color-text-muted: var(--color-text-muted-dark);
+      --color-text-inverted: var(--color-text-inverted-dark);
+      --color-fill: var(--color-fill-dark);
+      --color-button-accent: var(--color-button-accent-dark);
+      --color-button-accent-hover: var(--color-button-accent-hover-dark);
+      --color-button-muted: var(--color-button-muted-dark);
+      --color-button-muted-hover: var(--color-button-muted-dark-hover);
+    }
+
+    @media (prefers-color-scheme: dark) {
+      --color-text-base: var(--color-text-base-dark);
+      --color-text-muted: var(--color-text-muted-dark);
+      --color-text-inverted: var(--color-text-inverted-dark);
+      --color-fill: var(--color-fill-dark);
+      --color-button-accent: var(--color-button-accent-dark);
+      --color-button-accent-hover: var(--color-button-accent-hover-dark);
+      --color-button-muted: var(--color-button-muted-dark);
+      --color-button-muted-hover: var(--color-button-muted-dark-hover);
+    }
+  }
+}
+
+html,
+body {
+  padding: 0;
+  margin: 0;
+  font-family:
+    -apple-system,
+    BlinkMacSystemFont,
+    Segoe UI,
+    Roboto,
+    Oxygen,
+    Ubuntu,
+    Cantarell,
+    Fira Sans,
+    Droid Sans,
+    Helvetica Neue,
+    sans-serif;
+}
+
+body {
+  &.preload {
+    *,
+    *::before,
+    *::after {
+      transition: none !important;
+    }
+  }
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
