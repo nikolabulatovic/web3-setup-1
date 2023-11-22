@@ -1,6 +1,7 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: ['./pages/**/*.{js,ts,jsx,tsx}', './components/**/*.{js,ts,jsx,tsx}'],
+  mode: 'jit',
   theme: {
     extend: {
       textColor: {
@@ -8,6 +9,7 @@ module.exports = {
           base: 'var(--color-text-base)',
           muted: 'var(--color-text-muted)',
           inverted: 'var(--color-text-inverted)',
+          button: 'var(--color-text-button)',
         },
       },
       backgroundColor: {

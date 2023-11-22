@@ -2,11 +2,17 @@
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
 
+@font-face {
+  font-family: 'Inter';
+  src: url('/fonts/Inter-VariableFont.ttf') format('ttf');
+}
+
 @layer base {
   :root {
     --color-text-base-dark: #ffffff;
     --color-text-muted-dark: #c7d2fe;
     --color-text-inverted-dark: #4f46e5;
+    --color-text-button-dark: #000000;
     --color-fill-dark: #4338ca;
     --color-button-accent-dark: #212121;
     --color-button-accent-hover-dark: #585858;
@@ -21,6 +27,7 @@
       --color-text-base: #1f1f1f;
       --color-text-muted: #575757;
       --color-text-inverted: #8783da;
+      --color-text-button: #ffffff;
       --color-fill: #b6afff;
       --color-button-accent: #ffffff;
       --color-button-accent-hover: #eef2ff;
@@ -33,6 +40,7 @@
       --color-text-base: var(--color-text-base-dark);
       --color-text-muted: var(--color-text-muted-dark);
       --color-text-inverted: var(--color-text-inverted-dark);
+      --color-text-button: var(--color-text-button-dark);
       --color-fill: var(--color-fill-dark);
       --color-button-accent: var(--color-button-accent-dark);
       --color-button-accent-hover: var(--color-button-accent-hover-dark);
@@ -57,7 +65,20 @@ html,
 body {
   padding: 0;
   margin: 0;
+}
+
+html {
+  font-size: 62.5%;
+
+  @media screen and (max-width: 900px) {
+    font-size: 50%;
+  }
+}
+
+body {
+  color: var(--color-text-base);
   font-family:
+    Inter,
     -apple-system,
     BlinkMacSystemFont,
     Segoe UI,
@@ -69,6 +90,8 @@ body {
     Droid Sans,
     Helvetica Neue,
     sans-serif;
+  font-weight: 400;
+  font-size: 1.6rem;
 }
 
 body {
